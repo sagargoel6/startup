@@ -1,2 +1,22 @@
 data <- read.csv("Startups.csv")
 head(data)
+str(data)
+data(df$data)
+as.character(data$Class)
+str(data)
+df <- data.frame(data)
+df
+str(df)
+as.character(df$Class)
+str(df)
+library(rpart)
+mytree <- rpart(Class ~ Marketing + Funding + Area + Idea + Competitor, data = df, method = "class")
+fancyRpartPlot(mytree)
+library(rpart.plot)
+plot(mytree)
+mytree
+df
+str(df)
+library(party)
+mytree2 <- ctree(Class ~ Marketing + Funding + Area + Idea + Competitor, data = df)
+plot(mytree2)
